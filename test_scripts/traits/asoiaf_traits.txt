@@ -1,0 +1,304 @@
+####################
+### OTHER TRAITS ###
+####################
+
+
+
+######################
+### GENETIC TRAITS ###
+######################
+
+valyrian_1 = {
+	index = 1625
+
+	opposites = {
+		valyrian_3
+		valyrian_2
+	}
+	
+	birth = 0
+	random_creation = 0
+	inherit_chance = 100
+	
+	attraction_opinion = 10
+	prowess = 5
+        inbreeding_chance = -0.5
+        fertility = 0.1
+        health = 0.1
+
+	group = valyrian
+	level = 1
+	
+	genetic = yes
+	physical = yes
+	good = yes
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_valyrian_1_desc
+			}
+			desc = trait_valyrian_1_character_desc
+		}
+	}
+
+}
+valyrian_2 = {
+	index = 1626
+
+	opposites = {
+		valyrian_1
+		valyrian_3
+	}
+
+	genetic = yes
+	physical = yes
+	good = yes
+
+	birth = 0
+	random_creation = 0
+	inherit_chance = 100
+
+	group = valyrian
+	level = 2
+
+	birth = 0.0
+	random_creation = 0.0
+
+	attraction_opinion = 20
+	prowess = 10
+        inbreeding_chance = -0.90
+        fertility = 0.2
+        health = 0.2
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_valyrian_2_desc
+			}
+			desc = trait_valyrian_2_character_desc
+		}
+	}
+
+}
+valyrian_3 = {
+	index = 1627
+
+	opposites = {
+		valyrian_1
+		valyrian_2
+	}
+
+	birth = 0
+	random_creation = 0
+	both_parent_has_trait_inherit_chance = 0
+	inherit_chance = 100
+	
+	negate_health_penalty_add = 0.01
+	attraction_opinion = 20
+ 	fertility = 0.3
+        health = 0.3
+	attraction_opinion = 30
+	prowess = 15
+
+	group = valyrian
+	level = 3
+
+	
+        inbreeding_chance = -1
+       
+	
+	genetic = yes
+	physical = yes
+	good = yes
+	
+
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_valyrian_3_desc
+			}
+			desc = trait_valyrian_3_character_desc
+		}
+	}
+
+}
+
+baratheon = {
+	index = 1628
+
+	opposites = {
+		valyrian_3
+		lannister
+	}
+
+	genetic = yes
+	physical = yes
+	good = yes
+
+	inherit_chance = 100
+	random_creation = 0
+
+	prowess = 5
+	fertility = 0.5
+	
+	shown_in_ruler_designer = no
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_baratheon_desc
+			}
+			desc = trait_baratheon_character_desc
+		}
+	}
+}
+
+lannister = {
+	index = 1629
+
+	opposites = {
+		valyrian_3
+		baratheon
+	}
+
+	genetic = yes
+	physical = yes
+	good = yes
+
+	inherit_chance = 100
+	random_creation = 0
+
+	monthly_income_mult = 0.3
+
+	shown_in_ruler_designer = no
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_lannister_desc
+			}
+			desc = trait_lannister_character_desc
+		}
+	}
+}
+
+#dragon_egg = {
+#	index = 1630
+#	
+#	inherit_chance = 0
+#	random_creation = 0
+#	
+#	monthly_prestige_gain_mult = 0.2
+#	monthly_dynasty_prestige_mult = 0.05
+#	
+#	shown_in_ruler_designer = no
+#	
+#	desc = {
+#		first_valid = {
+#			triggered_desc = {
+#				trigger = {
+#					NOT = { exists = this }
+#				}
+#				desc = trait_dragon_egg_desc
+#			}
+#			desc = trait_dragon_egg_character_desc
+#		}
+#	}
+#}
+
+#dragon_rider = {
+#	index = 1631
+#	
+#	inherit_chance = 0
+#	random_creation = 0
+#	
+#	dread_baseline_add = 35
+#	dread_gain_mult = 0.25
+#	advantage = 45
+#	min_combat_roll = 5
+#	max_combat_roll = 5
+#	siege_phase_time = -0.25
+#	siege_morale_loss = 12.5
+#	enemy_hard_casualty_modifier = 0.25
+#	monthly_county_control_change_factor = 0.5
+#	monthly_dynasty_prestige = 5
+#	monthly_prestige = 5
+#	hostile_scheme_resistance_mult = 0.2
+#	
+#	shown_in_ruler_designer = no
+#	
+#	ai_boldness = high_positive_ai_value
+#	ai_energy = very_high_positive_ai_value
+#	
+#	desc = {
+#		first_valid = {
+#			triggered_desc = {
+#				trigger = {
+#					NOT = { exists = this }
+#				}
+#				desc = trait_dragon_rider_desc
+#			}
+#			desc = trait_dragon_rider_character_desc
+#		}
+#	}
+#}
+
+asoiaf_widowed = {
+	index = 1632
+	fame = yes
+	
+	flag = can_not_marry
+	
+	shown_in_ruler_designer = no
+	
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_asoiaf_widowed_desc
+			}
+			desc = trait_asoiaf_widowed_character_desc
+		}
+	}
+}
+asoiaf_refusing_marriage = {
+	index = 1633
+	fame = yes
+	
+	flag = can_not_marry
+	dynasty_house_opinion = -10
+	attraction_opinion = 25
+	
+	shown_in_ruler_designer = no
+	
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_asoiaf_refusing_marriage_desc
+			}
+			desc = trait_asoiaf_refusing_marriage_character_desc
+		}
+	}
+}

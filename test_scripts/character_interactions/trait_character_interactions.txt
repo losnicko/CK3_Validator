@@ -1,0 +1,46 @@
+add_specific_trait_interaction = {
+	category = interaction_category_diplomacy
+	desc = add_specific_trait_interaction.desc
+    interface_priority = 1
+	auto_accept = yes
+    use_diplomatic_range = no
+	
+	confirm_text = Okay
+	
+	is_shown = {
+		scope:actor = {
+			has_character_flag = lbt_enabled
+		}
+		scope:recipient = {
+			NOT = { has_trait = valyrian_3_trait }  # Updated condition: Recipient should not have the "valyrian_3" trait.
+		}
+	}
+	is_valid_showing_failures_only = {
+
+	}
+
+	on_accept = {
+		scope:recipient = {
+			add_trait = valyrian_3_trait  # Replace "valyrian_3_trait" with the actual trait ID for "valyrian_3."
+			
+			every_child = {
+				add_trait = valyrian_3_trait  # Replace "valyrian_3_trait" with the actual trait ID for "valyrian_3."
+				
+				every_child = {
+					limit = {
+						OR = {
+							is_grandchild_of = scope:recipient
+							is_great_grandchild_of = scope:recipient
+						}
+					}
+					
+					add_trait = valyrian_3_trait  # Replace "valyrian_3_trait" with the actual trait ID for "valyrian_3."
+				}
+			}
+		}
+	}
+	
+	ai_will_do = {
+		base = 0
+	}
+}
